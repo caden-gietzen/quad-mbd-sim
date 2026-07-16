@@ -21,7 +21,8 @@ Control laws are designed as isolated Simulink models, separated from the plant 
 
 ```
 quad-mbd-sim/
-├── plant/         # 6DOF quadrotor Simulink model + parameter init scripts (quaternion math via Aerospace Toolbox)
+├── common/        # shared, codegen-safe math utilities (quaternion library) used across all model folders
+├── plant/         # 6DOF quadrotor Simulink model + parameter init scripts
 ├── control/       # attitude/rate controller model (the Embedded Coder autocode target)
 ├── estimation/    # quaternion EKF for attitude estimation
 ├── codegen/       # Embedded Coder configuration, generated C, and model-vs-code equivalence tests
