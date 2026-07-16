@@ -1,17 +1,40 @@
-# Simulink build/cache
-slprj/
-*.slxc
-*.autosave
-
-# MATLAB editor backups
+# Autosave files
 *.asv
+*.m~
+*.autosave
+*.slx.r*
+*.mdl.r*
+*.bak
+
+# Derived content-obscured files
+*.p
+
+# Compiled MEX files
+*.mex*
+
+# Packaged app and toolbox files
+*.mlappinstall
+*.mltbx
+
+# Deployable archives
+*.ctf
+
+# Generated helpsearch folders
+helpsearch*/
+
+# Simulink/Simulink Coder build and cache folders
+slprj/
+sccprj/
+*.slxc
 
 # Embedded Coder / Simulink Coder generated build folders
+# (NOT a blanket "codegen/" ignore -- this repo's codegen/ is an
+# intentional tracked folder for Embedded Coder config + equivalence tests)
 *_ert_rtw/
 *_grt_rtw/
 
-# Compiled MEX binaries
-*.mex*
+# Cloud based storage dotfile
+.MATLABDriveTag
 
 # Generated simulation/Monte Carlo output data
 *.mat
