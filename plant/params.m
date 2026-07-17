@@ -8,4 +8,6 @@ function p = params()
     p.motor.max_thrust = 10; % Maximum thrust (N)
     p.motor.min_thrust = 0; % Minimum thrust (N)
     p.motor.delay = 0.05; % Motor delay (s)
+    p.motor.torque_coeff = 0.02; % Reaction (yaw) torque per unit thrust (m)
+    p.frame.arm_length = 0.15; % Center of mass to motor distance (m)
 end
