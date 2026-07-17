@@ -18,8 +18,9 @@ function [rdot, vdot, qdot, omegadot] = plant(r, v, q, omega, T, p)
 
 
     rdot = v; %  Position derivative is velocity
-    F_thrust_world = quat_rotate(q, [0, 0, T_total]); % Rotate thrust to world frame
-    F_gravity = [0, 0, -p.m * p.g]; % Gravity force in world frame
+    % FRD body / NED world: thrust acts along body -z (up), gravity along +z (down).
+    F_thrust_world = quat_rotate(q, [0, 0, -T_total]); % body -z (up), rotated to world
+    F_gravity = [0, 0, p.m * p.g]; % Gravity force in world frame (+z = down)
     vdot = (1/p.m) * (F_thrust_world + F_gravity); % Simple gravity effect
     qdot = quat_derivative(q, omega); % Quaternion derivative
 
